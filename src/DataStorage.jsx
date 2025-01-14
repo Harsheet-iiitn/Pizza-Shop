@@ -16,7 +16,7 @@ function DS(Order) {
 }
 
 function LEN() {
-  return 10;
+  return placed.length + making.length;
 }
 
 function showPlaced() {
@@ -38,13 +38,20 @@ function showPicked() {
 function Change(a) {
   if (placed.find(a) != undefined) {
     making.push(a);
+    placed = placed.filter((item) => item !== a);
   } else if (making.find(a) != undefined) {
     ready.push(a);
+    making = making.filter((item) => item !== a);
   } else if (ready.find(a) != undefined) {
     picked.push(a);
+    ready = ready.filter((item) => item !== a);
   }
+}
+
+function getData(a) {
+  return allOrders.findIndex((x) => x.id === a);
 }
 
 export default DS;
 
-export { LEN, showPicked, showPlaced, showMaking, showReady, Change };
+export { LEN, showPicked, showPlaced, showMaking, showReady, Change, getData };

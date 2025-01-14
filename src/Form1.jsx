@@ -88,7 +88,7 @@ function createForm() {
   }
 
   function Submit(event) {
-    if (LEN() == 10) {
+    if (LEN() === 10) {
       alert("Not Taking Any Order for now");
     } else if (
       details.Name !== "" &&
