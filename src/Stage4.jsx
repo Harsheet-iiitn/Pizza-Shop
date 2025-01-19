@@ -26,9 +26,6 @@ function Stage4() {
               <br />
             </center>
           </button>
-          <button onClick={Change(Order)}>
-            <center>Next</center>
-          </button>
         </div>;
       })}
     </tr>
